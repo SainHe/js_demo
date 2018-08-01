@@ -1,0 +1,51 @@
+body {
+    background-color: #ccc;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+#pic {
+    width: 1024px;
+    height: 509px;
+    position: relative;
+    margin: 0 auto;
+    background: url(../images/loding.gif) no-repeat center center #fff;
+}
+#pic img {
+    width: 1024px;
+    height: 509px;
+}
+#pic ul {
+    position: absolute;
+    top: 0;
+    right: -60px;
+}
+#pic li {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+    background-color: #666;
+    cursor: pointer;
+}
+#pic .active {
+    background-color: orange;
+}
+#pic span, #pic p {
+    text-align: center;
+    width: 100%;
+    line-height: 30px;
+    color: #fff;
+    position: absolute;
+    background-color: rgba(0,0,0,.6);
+    font-size: 16px;
+}
+#pic span {
+    top: 0;
+}
+#pic p {
+    bottom: 0;
+}

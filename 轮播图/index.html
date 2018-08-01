@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="pic">
+        <img src="" alt="">
+        <span>图片数量</span>
+        <p>文字说明</p>
+        <ul></ul>
+    </div>
+</body>
+
+</html>
+<script>
+    var imgUrl = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg'];
+    var imgTitle = ['图片1', '图片2', '图片3', '图片4'];
+    var num = 0;
+    var oPic = document.getElementById('pic');
+    var oImg = oPic.getElementsByTagName('img')[0];
+    var oTitle = oPic.getElementsByTagName('p')[0];
+    var oSpan = oPic.getElementsByTagName('span')[0];
+    var oUl = oPic.getElementsByTagName('ul')[0];
+    var oBtn = oUl.getElementsByTagName('li');
+    var str = '';
+
+    for (var i = 0; i < imgUrl.length; i++) {
+        str += '<li></li>';
+    }
+    oImg.src = imgUrl[num];
+    oUl.innerHTML = str;
+    oBtn[num].className = 'active';
+    oTitle.innerHTML = imgTitle[num];
+    oSpan.innerHTML = num + 1 + ' / ' + imgUrl.length;
+</script>

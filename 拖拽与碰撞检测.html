@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 500px;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <div id="box2"></div>
+</body>
+
+</html>
+<script>
+    /*
+    拖拽的问题：
+        1.如果拖拽的时候有文字被选中，或者是拖拽图片，会产生默认行为的问题
+            原因：当鼠标按下的时候，如果页面中有文字被选中，会触发浏览器移动文字的默认行为，和我们的拖拽行为冲突。
+            解决：
+                标准下：在onmousedown的时候阻止默认行为
+                非标准下：obj.setCapture()设置全局捕获，当我们给一个元素设置全局捕获以后，那么这个元素就会监听后续发生的所有事件，当有事件发生的时候，就会被当前设置了全局捕获的元素所触发，IE下有这个方法并且有效果，ff有这个方法但是没效果，chrome没有这个方法会报错
+    */
+    var oBox = document.getElementById('box');
+    var oBox2 = document.getElementById('box2');
+
+    drag(oBox);
+
+    function drag(obj) {
+        obj.onmousedown = function (e) {
+            var e = e || event;
+            // 计算鼠标距离元素边界距离
+            posX = e.clientX - obj.offsetLeft;
+            posY = e.clientY - obj.offsetTop;
+
+            if (obj.setCapture) { //非标准IE浏览器阻止默认行为
+                obj.setCapture();
+            }
+
+            document.onmousemove = function (e) {
+                var e = e || event;
+                var L = e.clientX - posX;
+                var T = e.clientY - posY;
+
+                // 限制拖拽范围+磁性吸附
+                if (L < 0) {
+                    L = 0;
+                } else if (L > document.documentElement.clientWidth - obj.offsetWidth - 0) {
+                    L = document.documentElement.clientWidth - obj.offsetWidth;
+                }
+
+
+                // 拖拽元素的位置
+                var L1 = obj.offsetLeft;
+                var T1 = obj.offsetTop;
+                var R1 = L1 + obj.offsetWidth;
+                var B1 = T1 + obj.offsetHeight;
+
+
+                // 查找被碰撞元素位置
+                var L2 = oBox2.offsetLeft;
+                var T2 = oBox2.offsetTop;
+                var R2 = L2 + oBox2.offsetWidth;
+                var B2 = T2 + oBox2.offsetHeight;
+
+                // 检测碰撞
+                if (R1 < L2 || L1 > R2 || B1 < T2 || T1 > B2) {
+                    oBox2.style.background = 'yellow';
+                } else {
+                    oBox2.style.background = 'blue';
+                }
+
+
+                if (T < 0) {
+                    T = 0;
+                } else if (T > document.documentElement.clientHeight - obj.offsetHeight - 0) {
+                    T = document.documentElement.clientHeight - obj.offsetHeight;
+                }
+
+
+                obj.style.left = L + 'px';
+                obj.style.top = T + 'px';
+            }
+
+            document.onmouseup = function () {
+                document.onmousemove = document.onmouseup = null;
+
+                if (obj.releaseCapture) { // 释放全局捕获
+                    obj.releaseCapture();
+                }
+            }
+
+            return false; //标准浏览器阻止默认行为
+        }
+    }
+</script>

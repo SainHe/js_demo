@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="pic">
+    <div id="pic1" class="box">
         <img src="" alt="">
         <span>图片数量</span>
         <p>文字说明</p>
@@ -20,23 +20,42 @@
 
 </html>
 <script>
-    var imgUrl = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg'];
-    var imgTitle = ['图片1', '图片2', '图片3', '图片4'];
-    var num = 0;
-    var oPic = document.getElementById('pic');
-    var oImg = oPic.getElementsByTagName('img')[0];
-    var oTitle = oPic.getElementsByTagName('p')[0];
-    var oSpan = oPic.getElementsByTagName('span')[0];
-    var oUl = oPic.getElementsByTagName('ul')[0];
-    var oBtn = oUl.getElementsByTagName('li');
-    var str = '';
+    //imgTab(主元素id,图片链接数组,标题数组,切换方式);
+    function imgTab(id, imgUrl, imgTitle, evt) {
+        var num = 0;
+        var oPic = document.getElementById(id);
+        var oImg = oPic.getElementsByTagName('img')[0];
+        var oTitle = oPic.getElementsByTagName('p')[0];
+        var oSpan = oPic.getElementsByTagName('span')[0];
+        var oUl = oPic.getElementsByTagName('ul')[0];
+        var oBtn = oUl.getElementsByTagName('li');
+        var str = '';
 
-    for (var i = 0; i < imgUrl.length; i++) {
-        str += '<li></li>';
+        for (var i = 0; i < imgUrl.length; i++) {
+            str += '<li></li>';
+        }
+        oUl.innerHTML = str;
+
+        function fnTab() {
+            oImg.src = imgUrl[num];
+            oSpan.innerHTML = num + 1 + '/' + imgUrl.length;
+            oTitle.innerHTML = imgTitle[num];
+            for (var i = 0; i < imgUrl.length; i++) {
+                oBtn[i].className = '';
+            }
+            oBtn[num].className = 'active';
+        }
+
+        fnTab();
+
+        for (var i = 0; i < imgUrl.length; i++) {
+            oBtn[i].index = i;
+            oBtn[i][evt] = function () {
+                num = this.index;
+                fnTab();
+            }
+        }
     }
-    oImg.src = imgUrl[num];
-    oUl.innerHTML = str;
-    oBtn[num].className = 'active';
-    oTitle.innerHTML = imgTitle[num];
-    oSpan.innerHTML = num + 1 + ' / ' + imgUrl.length;
+    imgTab('pic1', ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg'], ['图片1', '图片2', '图片3', '图片4'], 'onclick')
+
 </script>

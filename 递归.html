@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 递归求100以下能被3和5整除数的和
+    // function fn(num) {
+    //     if (num > 100) {
+    //         return 0;
+    //     }
+    //     if (num % 15 === 0) {
+    //         return num + fn(num + 1);
+    //     }
+    //     return fn(num + 1);
+    // }
+    // console.log(fn(1));
+    
+    // 递归求1~10的乘积
+    function fn(num){
+        if(num > 1){
+            return num * fn(num-1);
+        }else{
+            return 1;
+        }
+    }
+    console.log(fn(10));
+    
+</script>

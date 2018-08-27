@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+var str = 'http:www.baidu.com?a=1&b=2&c=3'
+/* 普通方法
+function queryUrlParameter(url){
+    var queryIndex = str.indexOf('?');
+    var obj = {};
+    var arr = [];
+
+    if (queryIndex > -1) {
+        var url = url.substr(queryIndex+1);
+        if (url) {
+            var arr = url.split('&');
+            for (var i = 0; i < arr.length; i++) {
+                var curArr = arr[i].split('=');
+                obj[curArr[0]] = curArr[1];
+            }
+        }
+    }
+    return obj;
+}
+*/
+/* 原型正则方法 */
+String.prototype.queryUrlParameter = function queryUrlParameter(){
+    var obj = {};
+    var reg = /([^=?&]+)=([^=?&]+)/g;
+    this.replace(reg,function(){
+        var arg = arguments;
+        obj[arg[1]] = arg[2];
+    });
+    return obj;
+}
+console.log(str.queryUrlParameter());
+</script>

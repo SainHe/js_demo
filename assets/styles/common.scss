@@ -1,0 +1,22 @@
+@import "mixins/_reset.scss";
+@import "mixins/_mixins.scss";
+
+// Layout
+.fl {
+    float: left !important;
+}
+.fr {
+    float: right !important;
+}
+.tl {
+    text-align: center !important;
+}
+.tr {
+    text-align: right !important;
+}
+.tc {
+    text-align: center !important;
+}
+.hide {
+    display: none;
+}

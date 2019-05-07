@@ -1,0 +1,45 @@
+{
+  "name": "kepuchina-app-h5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "build": "gulp",
+    "dev": "gulp dev",
+    "watch": "gulp watch",
+    "images": "gulp images",
+    "styles": "gulp styles",
+    "scripts": "gulp scripts",
+    "clean": "rimraf vendors/*"
+  },
+  "keywords": [
+    "科普中国App分享H5页面"
+  ],
+  "author": "li.zhibin <li.zhibin@scimall.org.cn>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "art-template-loader": "^1.4.3",
+    "babel-loader": "^8.0.5",
+    "core-js": "^3.0.1",
+    "del": "^4.1.0",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "glob": "^7.1.3",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "html-loader": "^0.5.5",
+    "pump": "^3.0.0",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "jquery": "^3.4.0"
+  }
+}

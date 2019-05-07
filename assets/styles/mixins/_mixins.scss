@@ -1,0 +1,60 @@
+@mixin clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+
+    *html & {
+        zoom: 1;
+    }
+    *:first-child+html & {
+        zoom: 1;
+    }
+}
+
+@mixin disabled ($bgColor: #e6e6e6, $textColor:#ababab) {
+    background-color: $bgColor !important;
+    color: $textColor !important;
+    cursor: not-allowed !important;
+}
+
+@mixin position ($position: relative, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin text-truncate ($overflow: ellipsis){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: $overflow; // clip、ellipsis
+}
+
+@mixin border-radius ($radius...) {
+    border-radius: $radius;
+    background-clip: border-box;
+}
+
+@mixin linear-gradient($from, $to, $deg: 180deg) {
+    background-color: $to;
+    background-image:-moz-linear-gradient($deg, $from, $to);
+    background-image:-o-linear-gradient($deg, $from, $to);
+    background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+    background-image: -webkit-linear-gradient($deg, $from, $to);
+    background-image: -ms-linear-gradient($deg, $from, $to);
+    background-image: linear-gradient($deg, $from, $to);
+}
+
+@mixin box-shadows($shadow...) {
+    -o-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+}

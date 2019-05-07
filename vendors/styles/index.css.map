@@ -1,0 +1,1 @@
+{"version":3,"file":"index.css","sources":["index.scss"],"sourcesContent":["// index\r\n.index-title {\r\n    font-size: 40px;\r\n    color: #f00;\r\n}\r\n"],"names":[],"mappings":"AACA,AAAA,YAAY,CAAC;EACT,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,IAAI,GACd"}

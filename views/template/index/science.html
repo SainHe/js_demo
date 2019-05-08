@@ -1,0 +1,17 @@
+<div class="w">
+    <div class="science-title">
+        <img src="{{columnImg}}" alt="">
+        <a href="{{columnLink}}" class="u-more">更多</a>
+    </div>
+    <ul>
+        {{each list}}
+        <li>
+            <a href="{{$value.href}}">
+                <img src="{{$value.src}}" alt="{{$value.name}}">
+                <h2>{{$value.name}}</h2>
+                <p>{{$value.name}}</p>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</div>

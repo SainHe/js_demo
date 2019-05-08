@@ -1,5 +1,224 @@
-// index
-.index-title {
-    font-size: 40px;
-    color: #f00;
+@import "common.scss"; // 更多按钮
+
+.u-more {
+    padding-right: 12px;
+    background: url("../images/more.png") right center no-repeat;
+    font-size: 12px;
+    color: #142434;
+}
+// banner
+
+.m-banner {
+    @include box-shadows(inset 0 15px 15px #eaeef3);
+    background: url("../images/banner-bg.png") repeat-x #fff;
+
+    .swiper-container {
+        position: relative;
+        z-index: 9;
+        max-width: 1200px;
+        height: 550px;
+        background-color: #fff;
+        @include box-shadows(-7px 0 7px #e1f0ff, 0 0 0 #fff, 7px 0 7px #e1f0ff, 0 20px 20px #b3d9ff);
+    }
+
+    .swiper-container-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        left: auto;
+        right: 100px;
+    }
+
+    .swiper-pagination {
+        text-align: right;
+    }
+
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 6px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #e5153e;
+    }
+}
+// 智库要闻 && 智库成果
+
+.wisdom {
+    margin-top: -50px;
+    border-top: solid 1px #d1e6ff;
+
+    .wisdom-title {
+        position: relative;
+        padding-left: 20px;
+        height: 70px;
+        vertical-align: middle;
+    }
+
+    .wisdom-title img {
+        margin-top: 23px;
+    }
+
+    .wisdom-title .u-more {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+    }
+}
+
+.m-index-wrapper {
+    padding: 110px 0 60px;
+    background-color: #f2f8ff;
+    overflow: hidden;
+
+    .achievement,
+    .news {
+        height: 710px;
+        border: solid 1px #d1e6ff;
+    }
+
+    .news {
+        float: left;
+        width: 400px;
+        background: url("../images/wisdom-lt.png") 0 0 no-repeat, url("../images/wisdom-rt.png") right 0 no-repeat, url("../images/wisdom-lb.png") 0 bottom no-repeat;
+        background-color: #fff;
+    }
+
+    .achievement {
+        float: right;
+        width: 780px;
+        background: url("../images/wisdom-lt.png") 0 0 no-repeat, url("../images/wisdom-rt.png") right 0 no-repeat;
+        background-color: #fff;
+    }
+}
+// 科技人物
+
+.science {
+    padding-bottom: 80px;
+    background: #fff;
+    overflow: hidden;
+
+    .science-title {
+        position: relative;
+        padding: 23px 0 44px;
+        text-align: center;
+
+        .u-more {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+    }
+
+    ul {
+        margin-right: -24px;
+
+        li {
+            position: relative;
+            float: left;
+            margin-right: 24px;
+            width: 180px;
+            height: 220px;
+            border: solid 1px #d1e6ff;
+            background: #fff;
+            text-align: center;
+
+            img {
+                padding-top: 10px;
+                width: 130px;
+                height: 130px;
+                border-radius: 50%;
+            }
+
+            h2 {
+                position: absolute;
+                margin-top: 12px;
+                width: 100%;
+                font-size: 46px;
+                color: #f1f8ff;
+            }
+
+            p {
+                position: absolute;
+                margin-top: 28px;
+                width: 100%;
+                font-size: 16px;
+                color: #142434;
+            }
+        }
+    }
+}
+// 底部四列表
+
+.index-list {
+    margin-right: -20px;
+    overflow: hidden;
+
+    .list {
+        float: left;
+        margin: 0 20px 20px 0;
+        width: 590px;
+        height: 355px;
+        border: solid 1px #d1e6ff;
+        border-top: none;
+        background-color: #fff;
+
+        ul {
+            padding-top: 10px;
+        }
+
+        li {
+            margin: 0 20px;
+            border-bottom: solid 1px #e5e5e5;
+            line-height: 56px;
+        }
+
+        li:last-child {
+            border: none;
+        }
+
+        li a {
+            color: #142434;
+        }
+
+        li i {
+            display: inline-block;
+            margin-right: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            vertical-align: middle;
+            background: linear-gradient(135deg, rgba(81, 178, 231, 1) 0%, rgba(40, 123, 203, 1) 100%);
+            box-shadow: 0 2px 4px 0 rgba(90, 174, 255, 0.63);
+        }
+
+        li span {
+            float: right;
+            font-size: 12px;
+            color: #4F565E;
+        }
+    }
+
+    .list-title {
+        position: relative;
+        height: 40px;
+        background: url("../images/list-title-bg.jpg") no-repeat;
+
+        img {
+            position: absolute;
+            top: 23px;
+            left: 34px;
+        }
+
+        .u-more {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+    }
 }

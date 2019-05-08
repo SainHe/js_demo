@@ -1,4 +1,6 @@
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
     watch: false,
     mode: 'development',
@@ -11,6 +13,15 @@ module.exports = {
         alias: {
             tpl: path.resolve(__dirname, 'views/template/')
         }
+    },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                  ie8: true
+                }
+            })
+        ]
     },
     module: {
         rules: [{

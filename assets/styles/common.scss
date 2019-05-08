@@ -20,3 +20,118 @@
 .hide {
     display: none;
 }
+.w {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+// Header
+.l-header {
+    background-color: #fff;
+    .w {
+        padding: 30px 0 29px 0;
+    }
+    .logo {
+        float: left;
+        margin-right: 433px;
+        padding-top: 3px;
+        .logo-img {
+            float: left;
+        }
+    }
+    .m-search-box {
+        float: left;
+        max-width: 400px;
+        height: 40px;
+        input {
+            float: left;
+            display: block;
+            width: 339px;
+            height: 40px;
+            border: solid 1px #e5e5e5;
+            border-right: none;
+            border-radius: 18px 0 0 18px;
+            background-color: #f2f8ff;
+            text-indent: 20px;
+            line-height: 40px;
+        }
+        .search-btn {
+            float: left;
+            display: block;
+            width: 60px;
+            height: 40px;
+            border-radius: 0 18px 18px 0;
+            background: url(../images/search.png) 21px 11px no-repeat #287bcb;
+        }
+    }
+    .m-min-account {
+        float: right;
+        .shortcut-login {
+            line-height: 40px;
+            font-size: 16px;
+            span {
+                float: left;
+                display: block;
+                margin: 10px 17px 0;
+                width: 1px;
+                height: 20px;
+                background-color: #e5e5e5;
+                overflow: hidden;
+            }
+            a {
+                float: left;
+                display: block;
+                color: #142434;
+            }
+        }
+    }
+}
+
+// Footer
+.l-footer {
+    height: 80px;
+    background-color: #20578e;
+    .footer-left {
+        float: left;
+        padding-top: 17px;
+        span {
+            float: left;
+            display: block;
+            margin: 13px 20px 0;
+            width: 1px;
+            height: 20px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        img {
+            float: left;
+            display: block;
+            vertical-align: top;
+        }
+        .img-zk {
+            margin-top: 15px;
+        }
+    }
+    .footer-right {
+        float: right;
+        padding-top: 30px;
+        line-height: 22px;
+        color: #fff;
+        a {
+            color: #fff;
+            vertical-align: top;
+        }
+        span {
+            display: inline-block;
+            margin: 3px 20px 0;
+            width: 1px;
+            height: 16px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        p {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+}

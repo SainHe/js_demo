@@ -1,0 +1,28 @@
+<div class="wisdom-title">
+    <img src="{{columnImg}}" alt="">
+    <a href="{{columnLink}}" class="u-more">更多</a>
+</div>
+<div class="news-btn">
+    {{each list}}
+    <a class="u-news-btn" href="javascript:;">{{$value.columnName}}</a>
+    {{/each}}
+</div>
+<div id="newsTab">
+    {{each list}}
+    <div class="news-list">
+        <div class="news-sketch">
+            <a href="{{$value.flist.link}}">
+                <img src="{{$value.flist.img}}" alt="">
+                <p>{{$value.flist.title}}</p>
+                <span>{{$value.flist.time}}</span>
+            </a>
+        </div>
+        <ul>{{each $value.slist}}
+            <li>
+                <a href="{{$value.link}}">{{$value.title}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/each}}
+</div>

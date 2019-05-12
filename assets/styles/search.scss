@@ -1,0 +1,32 @@
+@import "common.scss";
+
+.search-top {
+    position: relative;
+    padding: 30px 80px;
+    img {
+        @include position(absolute,30px,auto,auto,80px);
+    }
+    .search-result {
+        margin-top: 1px;
+        margin-left: 170px;
+        height: 22px;
+        line-height: 22px;
+        font-weight: bold;
+        .search-keywords {
+            padding: 0 16px;
+            background: url(../images/shape-left.png) left top no-repeat, url(../images/shape-right.png) right bottom no-repeat;
+            font-size: 16px;
+            color: #142434;
+        }
+        .search-number {
+            padding-left: 20px;
+            padding-right: 10px;
+            font-size: 14px;
+            color: #E5163E;
+        }
+        .search-text {
+            font-size: 14px;
+            color: #142434;
+        }
+    }
+}

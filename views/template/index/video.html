@@ -1,0 +1,13 @@
+<div class="list-title">
+    <img src="{{columnImg}}" alt="">
+    <a href="{{columnLink}}" class="u-more">更多</a>
+</div>
+<ul>
+    {{each list}}
+    <li>
+        <i class="u-dot"></i>
+        <a href="{{$value.href}}">{{$value.title}}</a>
+        <a href="{{$value.href}}"><span class="u-video"></span></a>
+    </li>
+    {{/each}}
+</ul>

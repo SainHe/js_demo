@@ -1,48 +1,143 @@
 @import "mixins/_reset.scss";
-@import "mixins/_mixins.scss";
+@import "mixins/_mixins.scss"; // Layout
 
-// Layout
 .fl {
     float: left !important;
 }
+
 .fr {
     float: right !important;
 }
+
 .tl {
     text-align: center !important;
 }
+
 .tr {
     text-align: right !important;
 }
+
 .tc {
     text-align: center !important;
 }
+
 .hide {
     display: none;
 }
+
 .w {
     margin: 0 auto;
     width: 1200px;
 }
+/*
+* classify:"元件"
+* Explain:文章列表头部，更多按钮
+*
+*/
+.u-more {
+    padding-right: 12px;
+    background: url("../images/more.png") right center no-repeat;
+    font-size: 12px;
+    color: #142434;
+}
+/*
+* classify:"元件"
+* Explain:文章列表左侧蓝色圆点
+*
+*/
 
-// Header
-.l-header {
+.u-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    vertical-align: middle;
+    background: linear-gradient(135deg, rgba(81, 178, 231, 1) 0%, rgba(40, 123, 203, 1) 100%);
+    box-shadow: 0 2px 4px 0 rgba(90, 174, 255, 0.63);
+}
+/*
+* classify:"元件"
+* Explain:视频列表video图标
+*
+*/
+.u-video {
+    display: block;
+    width: 18px;
+    height: 16px;
+    background: url("../images/video.png") no-repeat;
+}
+
+/*
+* classify:"元件"
+* Explain:智库要闻按钮
+*
+*/
+.u-news-btn {
+    float: left;
+    display: block;
+    margin-right: 20px;
+    height: 20px;
+    width: 48px;
+    border: 1px solid #d1e6ff;
+    border-radius: 10px;
     background-color: #fff;
-    .w {
-        padding: 30px 0 29px 0;
+    text-align: center;
+    line-height: 20px;
+    color: #142434;
+
+    &.active {
+        border: none;
+        background: linear-gradient(135deg, rgba(244, 48, 114, 1) 0%, rgba(229, 21, 62, 1) 100%);
+        color: #fff;
     }
+}
+
+
+/*
+* classify:"元件"
+* Explain:未找到搜索结果
+*
+*/
+.u-notfound {
+    margin: 100px 0;
+    text-align: center;
+    overflow: hidden;
+    img {
+        width: 252px;
+        height: 150px;
+    }
+    p {
+        padding-top: 40px;
+        font-size: 14px;
+        color: #4F565E;
+    }
+}
+// Header
+
+.l-header {
+    padding-bottom: 30px;
+    background-color: #fff;
+    overflow: hidden;
+
+    .w {
+        padding: 30px 0;
+    }
+
     .logo {
         float: left;
         margin-right: 433px;
         padding-top: 3px;
+
         .logo-img {
             float: left;
         }
     }
+
     .m-search-box {
         float: left;
         max-width: 400px;
         height: 40px;
+
         input {
             float: left;
             display: block;
@@ -55,20 +150,24 @@
             text-indent: 20px;
             line-height: 40px;
         }
+
         .search-btn {
             float: left;
             display: block;
             width: 60px;
             height: 40px;
             border-radius: 0 18px 18px 0;
-            background: url(../images/search.png) 21px 11px no-repeat #287bcb;
+            background: url("../images/search.png") 21px 11px no-repeat #287bcb;
         }
     }
+
     .m-min-account {
         float: right;
+
         .shortcut-login {
             line-height: 40px;
             font-size: 16px;
+
             span {
                 float: left;
                 display: block;
@@ -78,6 +177,7 @@
                 background-color: #e5e5e5;
                 overflow: hidden;
             }
+
             a {
                 float: left;
                 display: block;
@@ -86,14 +186,284 @@
         }
     }
 }
+// 导航
 
+.l-nav {
+    @include clearfix;
+}
+
+.l-main-nav {
+    height: 60px;
+    border-top: solid 1px #e5e5e5;
+
+    ul {
+        margin-right: -60px;
+
+        li {
+            float: left;
+            display: block;
+            margin-right: 60px;
+            width: 80px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+
+            a {
+                display: block;
+                height: 60px;
+            }
+        }
+    }
+    // 导航-智库首页
+    .nav-index {
+        a {
+            background: url("../images/nav-index.png") center 0 no-repeat;
+        }
+
+        &.active {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &.active a {
+            background-position: center -60px;
+        }
+
+        &:hover {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &:hover a {
+            background-position: center -60px;
+        }
+    }
+    // 导航-智库要闻
+    .nav-news {
+        a {
+            background: url("../images/nav-news.png") center 0 no-repeat;
+        }
+
+        &.active {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &.active a {
+            background-position: center -60px;
+        }
+
+        &:hover {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &:hover a {
+            background-position: center -60px;
+        }
+    }
+    // 导航-智库成果
+    .nav-achievement {
+        a {
+            background: url("../images/nav-achievement.png") center 0 no-repeat;
+        }
+
+        &.active {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &.active a {
+            background-position: center -60px;
+        }
+
+        &:hover {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &:hover a {
+            background-position: center -60px;
+        }
+    }
+    // 导航-舆情动态
+    .nav-dynamic {
+        a {
+            background: url("../images/nav-dynamic.png") center 0 no-repeat;
+        }
+
+        &.active {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &.active a {
+            background-position: center -60px;
+        }
+
+        &:hover {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &:hover a {
+            background-position: center -60px;
+        }
+    }
+    // 导航-科技人物
+    .nav-personage {
+        position: relative;
+
+        i {
+            @include position(absolute,28px,-12px);
+            @include arrow(bottom,3px,#142434);
+            height: 6px;
+        }
+
+        a {
+            background: url("../images/nav-personage.png") center 0 no-repeat;
+        }
+
+        &.active {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &.active a {
+            background-position: center -60px;
+        }
+
+        &:hover {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &:hover a {
+            background-position: center -60px;
+        }
+
+        &:hover i {
+            @include arrow(bottom,3px,#2a7dcc);
+        }
+
+        .nav-second {
+            position: absolute;
+            left: -25px;
+            z-index: 20;
+            display: none;
+            margin: 0;
+            font-size: 16px;
+
+            li {
+                width: 130px;
+                height: 50px;
+                border-top: solid 1px #e5e5e5;
+                background: #fff;
+
+                a {
+                    width: 130px;
+                    height: 50px;
+                    background: #fff;
+                    line-height: 50px;
+                    color: #142434;
+
+                    &:hover {
+                        background: #f2f8ff;
+                        color: #287BCB;
+                    }
+                }
+            }
+        }
+    }
+    // 导航-智库视频
+    .nav-video {
+        a {
+            background: url("../images/nav-video.png") center 0 no-repeat;
+        }
+
+        &.active {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &.active a {
+            background-position: center -60px;
+        }
+
+        &:hover {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &:hover a {
+            background-position: center -60px;
+        }
+    }
+    // 导航-科技政策
+    .nav-policy {
+        a {
+            background: url("../images/nav-policy.png") center 0 no-repeat;
+        }
+
+        &.active {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &.active a {
+            background-position: center -60px;
+        }
+
+        &:hover {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &:hover a {
+            background-position: center -60px;
+        }
+    }
+    // 导航-科情在线
+    .nav-online {
+        a {
+            background: url("../images/nav-online.png") center 0 no-repeat;
+        }
+
+        &.active {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &.active a {
+            background-position: center -60px;
+        }
+
+        &:hover {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &:hover a {
+            background-position: center -60px;
+        }
+    }
+    // 导航-建言献策
+    .nav-offeradvice {
+        a {
+            background: url("../images/nav-offeradvice.png") center 0 no-repeat;
+        }
+
+        &.active {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &.active a {
+            background-position: center -60px;
+        }
+
+        &:hover {
+            background: url("../images/nav-active.png") center bottom no-repeat;
+        }
+
+        &:hover a {
+            background-position: center -60px;
+        }
+    }
+}
 // Footer
+
 .l-footer {
     height: 80px;
     background-color: #20578e;
+
     .footer-left {
         float: left;
         padding-top: 17px;
+
         span {
             float: left;
             display: block;
@@ -103,24 +473,29 @@
             background-color: #fff;
             overflow: hidden;
         }
+
         img {
             float: left;
             display: block;
             vertical-align: top;
         }
+
         .img-zk {
             margin-top: 15px;
         }
     }
+
     .footer-right {
         float: right;
         padding-top: 30px;
         line-height: 22px;
         color: #fff;
+
         a {
             color: #fff;
             vertical-align: top;
         }
+
         span {
             display: inline-block;
             margin: 3px 20px 0;
@@ -129,9 +504,154 @@
             background-color: #fff;
             overflow: hidden;
         }
+
         p {
             display: inline-block;
             vertical-align: top;
         }
+    }
+}
+// 页码
+.m-pagination {
+    margin-top: 40px;
+    text-align: center;
+    overflow: hidden;
+    font-size: 12px;
+    ul {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline;
+            a {
+                float: left;
+                margin: 0 4px;
+                padding: 13px 16px;
+                border: solid 2px #e2efff;
+                text-decoration: none;
+                background-color: #fff;
+                color: #142434;
+                &.active {
+                    border-color: #287bcb;
+                    background-color: #287bcb;
+                    color: #fff;
+                }
+                &:hover:not(.active) {
+                    border-color: #287bcb;
+                    background-color: #fff;
+                }
+            }
+        }
+        span {
+            display: inline-block;
+            padding: 13px 8px;
+            color: #142434;
+        }
+        input {
+            width: 39px;
+            height: 37px;
+            box-sizing: content-box;
+            border: solid 2px #e2efff;
+            background-color: #fff;
+            color: #142434;
+            text-align: center;
+            line-height: 37px;
+        }
+    }
+}
+// 文字列表页公用样式
+.l-main {
+    padding: 40px 0 60px;
+    box-shadow: inset 0 15px 15px #dfe8f3;
+    background: url(../images/container-bg.png) center top no-repeat #f2f8ff;
+    .l-container {
+        margin: 0 auto;
+        width: 1200px;
+        min-height: 500px;
+        border: solid 1px #d1e6ff;
+        background: url(../images/container-lt.png) left top no-repeat, url(../images/container-rt.png) right top no-repeat, url(../images/container-rb.png) right bottom no-repeat #fff;
+        .m-container-top {
+            position: relative;
+            padding: 30px 80px;
+            img {
+                @include position(absolute,5px,auto,auto,60px);
+            }
+        }
+        .m-list-text {
+            padding: 0 80px;
+            li {
+                padding-left: 5px;
+                height: 70px;
+                border-bottom: solid 1px #e5e5e5;
+                line-height: 70px;
+                i.u-dot {
+                    margin-right: 20px;
+                }
+                &:hover {
+                    background-color: #f3f8ff;
+                }
+                &:hover .title {
+                    color: #287BCB;
+                }
+                &:last-child {
+                    border: none;
+                }
+                a {
+                    display: block;
+                    height: 70px;
+                }
+                .title {
+                    font-size: 16px;
+                    color: #142434;
+                }
+                .time {
+                    float: right;
+                    font-size: 12px;
+                    color: #4F565E;
+                }
+            }
+        }
+    }
+}
+// 图文列表公用样式
+.m-list-imagetext {
+    padding: 0 80px;
+    li {
+        padding: 30px 0;
+        border-bottom: solid 1px #e5e5e5;
+        overflow: hidden;
+        &:last-child {
+            border: none;
+        }
+        &:hover h2 {
+            color: #287bcb;
+        }
+    }
+}
+.m-list-imagetext-sketch {
+    float: left;
+    display: block;
+    padding-right: 20px;
+    img {
+        width: 180px;
+        height: 135px;
+    }
+}
+.m-list-imagetext-describe {
+    h2 {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        font-weight: bold;
+        font-size: 18px;
+        color: #142434;
+    }
+    p {
+        padding-bottom: 20px;
+        line-height: 24px;
+        color: #142434;
+    }
+    span {
+        font-size: 12px;
+        color: #4F565E;
     }
 }

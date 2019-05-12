@@ -1,0 +1,9 @@
+@import "common.scss";
+.column-news-btn {
+    padding-left: 200px;
+    a:hover {
+        border: none;
+        background: linear-gradient(135deg, rgba(244, 48, 114, 1) 0%, rgba(229, 21, 62, 1) 100%);
+        color: #fff;
+    }
+}

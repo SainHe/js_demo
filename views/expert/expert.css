@@ -1,0 +1,68 @@
+.l-detail-main {
+    margin: 0 auto;
+    width: 1200px;
+}
+.m-expert-detail {
+    min-height: 500px;
+    border: solid 1px #d1e6ff;
+    background: url(../../assets/images/article-lt.png) left top no-repeat, url(../../assets/images/article-rt.png) right top no-repeat, url(../../assets/images/article-lb.png) left bottom no-repeat #fff;
+    overflow: hidden;
+}
+.m-position {
+    padding-bottom: 20px;
+    color: #4F565E;
+}
+.m-position a {
+    color: #4F565E;
+}
+.expert-detail-left {
+    float: left;
+    margin: 60px 80px;
+    width: 780px;
+}
+.expert-name p {
+    display: inline-block;
+    padding-right: 10px;
+    color: #142434;
+    font-size: 34px;
+    font-weight: bold;
+}
+.expert-name span {
+    color: #4F565E;
+    font-size: 18px;
+}
+.expert-panel-title {
+    height: 24px;
+}
+.expert-panel-title {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 24px;
+    overflow: hidden;
+}
+.expert-panel-title span {
+    float: left;
+    display: block;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: #287bcb;
+    color: #fff;
+    text-align: center;
+}
+.expert-panel-title p {
+    color: #287BCB;
+    font-weight: bold;
+}
+.expert-panel-content {
+    color: #142434;
+}
+.expert-panel-content p {
+    padding-top: 30px;
+}
+
+.expert-detail-right {
+    float: right;
+    margin-right: 40px;
+    width: 218px;
+}

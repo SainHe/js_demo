@@ -1,0 +1,18 @@
+<div class="wisdom-title">
+    <img src="{{columnImg}}" alt="">
+    <a href="{{columnLink}}" class="u-more">更多</a>
+</div>
+<ul>
+    {{each list}}
+    <li>
+        <a class="m-list-imagetext-sketch" href="{{$value.href}}">
+            <img src="{{$value.src}}" alt="">
+        </a>
+        <a class="m-list-imagetext-describe" href="{{$value.href}}">
+            <h2>{{$value.title}}</h2>
+            <p>{{$value.content}}</p>
+            <span>{{$value.time}}</span>
+        </a>
+    </li>
+    {{/each}}
+</ul>

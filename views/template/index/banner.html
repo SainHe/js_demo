@@ -1,0 +1,17 @@
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        {{each $data}}
+        <div class="swiper-slide">
+            <a href="{{$value.link}}">
+                <img src="{{$value.img}}" alt="">
+                <p>
+                    <i class="u-dot"></i>
+                    <span>{{$value.title}}</span>
+                </p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>

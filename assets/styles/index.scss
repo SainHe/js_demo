@@ -1,12 +1,4 @@
-@import "common.scss"; // 更多按钮
-
-.u-more {
-    padding-right: 12px;
-    background: url("../images/more.png") right center no-repeat;
-    font-size: 12px;
-    color: #142434;
-}
-// banner
+@import "common.scss"; // banner
 
 .m-banner {
     @include box-shadows(inset 0 15px 15px #eaeef3);
@@ -15,10 +7,38 @@
     .swiper-container {
         position: relative;
         z-index: 9;
-        max-width: 1200px;
+        max-width: 1400px;
         height: 550px;
         background-color: #fff;
         @include box-shadows(-7px 0 7px #e1f0ff, 0 0 0 #fff, 7px 0 7px #e1f0ff, 0 20px 20px #b3d9ff);
+
+        .swiper-slide {
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                left: 50%;
+                margin-left: -700px;
+                width: 1400px;
+                height: 550px;
+            }
+
+            p {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 50px;
+                padding-left: 120px;
+                background: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                font-size: 15px;
+                line-height: 50px;
+            }
+
+            i {
+                margin-right: 10px;
+            }
+        }
     }
 
     .swiper-container-horizontal > .swiper-pagination-bullets,
@@ -50,6 +70,7 @@
 // 智库要闻 && 智库成果
 
 .wisdom {
+    padding: 110px 0 60px;
     margin-top: -50px;
     border-top: solid 1px #d1e6ff;
 
@@ -69,10 +90,59 @@
         top: 30px;
         right: 20px;
     }
+
+    .news-btn {
+        padding-bottom: 20px;
+        padding-left: 70px;
+        overflow: hidden;
+    }
+
+    .news-list {
+        display: none;
+        padding: 0 20px;
+        overflow: hidden;
+
+        a {
+            color: #142434;
+        }
+        a:hover {
+            color: #287bcb;
+        }
+
+        .news-sketch {
+            img {
+                width: 360px;
+                height: 200px;
+            }
+
+            p {
+                padding-top: 20px;
+                padding-bottom: 12px;
+                font-weight: bold;
+            }
+
+            span {
+                display: block;
+                padding-bottom: 20px;
+                font-size: 12px;
+                color: #4F565E;
+            }
+        }
+
+        ul li {
+            padding: 20px 0;
+            border-top: solid 1px #e5e5e5;
+            line-height: 24px;
+            font-weight: bold;
+        }
+    }
+
+    .news-list.active {
+        display: block;
+    }
 }
 
 .m-index-wrapper {
-    padding: 110px 0 60px;
     background-color: #f2f8ff;
     overflow: hidden;
 
@@ -94,13 +164,25 @@
         width: 780px;
         background: url("../images/wisdom-lt.png") 0 0 no-repeat, url("../images/wisdom-rt.png") right 0 no-repeat;
         background-color: #fff;
+
+        ul {
+            padding-top: 10px;
+        }
+
+        li {
+            padding: 0 20px 20px 30px;
+            overflow: hidden;
+            &:hover h2 {
+                color: #287bcb;
+            }
+        }
     }
 }
 // 科技人物
 
 .science {
-    padding-bottom: 80px;
-    background: #fff;
+    height: 390px;
+    background: url("../images/science-bg.png") center top no-repeat #fff;
     overflow: hidden;
 
     .science-title {
@@ -157,6 +239,7 @@
 
 .index-list {
     margin-right: -20px;
+    padding: 60px 0 40px;
     overflow: hidden;
 
     .list {
@@ -176,32 +259,30 @@
             margin: 0 20px;
             border-bottom: solid 1px #e5e5e5;
             line-height: 56px;
+            cursor: pointer;
+            &:last-child {
+                border: none;
+            }
+            a {
+                color: #142434;
+            }
+            &:hover a {
+                color: #287bcb;
+            }
+            i.u-dot {
+                margin-right: 10px;
+            }
+            span {
+                float: right;
+                font-size: 12px;
+                color: #4F565E;
+            }
         }
+    }
 
-        li:last-child {
-            border: none;
-        }
-
-        li a {
-            color: #142434;
-        }
-
-        li i {
-            display: inline-block;
-            margin-right: 10px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            vertical-align: middle;
-            background: linear-gradient(135deg, rgba(81, 178, 231, 1) 0%, rgba(40, 123, 203, 1) 100%);
-            box-shadow: 0 2px 4px 0 rgba(90, 174, 255, 0.63);
-        }
-
-        li span {
-            float: right;
-            font-size: 12px;
-            color: #4F565E;
-        }
+    .list.video .u-video {
+        float: right;
+        margin: 20px 20px 0 0;
     }
 
     .list-title {

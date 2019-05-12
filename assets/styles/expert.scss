@@ -1,0 +1,106 @@
+@import "common.scss";
+.column-expert-search {
+    position: relative;
+    float: right;
+    input {
+        width: 240px;
+        height: 30px;
+        border: none;
+        border-bottom: solid 1px #e5e5e5;
+    }
+    a {
+        position: absolute;
+        top: 7px;
+        right: 0;
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: url(../images/search-btn-black.png) no-repeat;
+    }
+}
+.expert-main {
+    padding: 0 80px;
+    .column-expert-nav {
+        padding: 30px 0;
+        border-bottom: solid 1px #e5e5e5;
+        overflow: hidden;
+        ul {
+            float: left;
+            background-color: #f3f8ff;
+        }
+        span {
+            float: left;
+            padding-right: 20px;
+            color: #4F565E;
+        }
+        li {
+            position: relative;
+            float: left;
+            background: url(../images/expert-nav-line.jpg) right center no-repeat;
+            height: 20px;
+            line-height: 20px;
+            &:last-child {
+                background: none;
+            }
+            i {
+                position: absolute;
+                top: 4px;
+                right: 0;
+                width: 1px;
+                height: 12px;
+                background-color: #e5e5e5;
+                overflow: hidden;
+            }
+            a {
+                padding: 0 13px;
+                color: #142434;
+            }
+            &.active a {
+                background-color: #287bcb;
+                color: #fff;
+            }
+            &.active {
+                background: none;
+            }
+            &:hover a {
+                background-color: #287bcb;
+                color: #fff;
+            }
+            &:hover {
+                background: none;
+            }
+        }
+    }
+    .expert-list {
+        margin-top: 30px;
+        padding-bottom: 20px;
+        border: solid 1px #e5e5e5;
+        overflow: hidden;
+        .expert-list-title {
+            padding-left: 30px;
+            height: 40px;
+            background-color: #f2f8ff;
+            font-size: 18px;
+            line-height: 40px;
+            color: #4F565E;
+        }
+        ul {
+            padding-left: 18px;
+        }
+        li {
+            float: left;
+            margin-top: 20px;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            a {
+                display: block;
+                color: #142434;
+                &:hover {
+                    color: #287bcb;
+                }
+            }
+        }
+    }
+}
